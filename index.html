@@ -17,8 +17,8 @@
 
 <script type="application/json" id="task-data">
 {
-  "lastUpdated": "2026-05-15T18:00:00+03:00",
-  "lastUpdatedLabel": "15 мая 2026, 18:00 MSK",
+  "lastUpdated": "2026-05-15T18:30:00+03:00",
+  "lastUpdatedLabel": "15 мая 2026, 18:30 MSK",
   "blocks": [
     {
       "id": "block-1",
@@ -110,6 +110,13 @@
           "id": "3-3",
           "title": "Помочь Сердару собрать плотный документ по ПДЗ",
           "note": "Просроченная дебиторская задолженность. Параллельно с темпом Сердара.",
+          "status": "pending",
+          "urgency": "later"
+        },
+        {
+          "id": "3-4",
+          "title": "Провести 1-1 с Сердаром",
+          "note": "",
           "status": "pending",
           "urgency": "later"
         }
@@ -562,12 +569,12 @@
 <body>
 <div class="container">
   <header>
-    <div class="date" id="updated-label">Обновлено 15 мая 2026, 18:00 MSK</div>
+    <div class="date" id="updated-label">Обновлено 15 мая 2026, 18:30 MSK</div>
     <h1>Задачи</h1>
     <div class="subtitle">Текущий рабочий список — структурирован по смысловым блокам, с приоритетами и контекстом.</div>
     <div class="meta">
       <div>
-        <div class="progress"><strong id="done-count">0</strong> из <span id="total-count">21</span> выполнено</div>
+        <div class="progress"><strong id="done-count">0</strong> из <span id="total-count">22</span> выполнено</div>
         <div class="progress-bar"><div class="progress-bar-fill" id="progress-fill"></div></div>
       </div>
       <div class="readonly-hint">Страница только для чтения.<br>Чтобы внести изменения — попроси Claude.</div>
@@ -594,8 +601,6 @@
 </div>
 
 <script>
-  // Рендеринг из data-блока. Если JS выключен — пользователь увидит пустую секцию,
-  // но это редкий случай. Для критичных сценариев можно дублировать в статике.
   (function() {
     const data = JSON.parse(document.getElementById('task-data').textContent);
     const content = document.getElementById('content');
